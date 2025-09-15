@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MiniSocial — prototype</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">MiniSocial</div>
+    <div class="search">
+      <input id="searchInput" placeholder="Search posts, users, tags..." />
+    </div>
+    <div class="top-right">
+      <button id="newPostBtn">New Post</button>
+      <div id="notifBadge" class="notif">0</div>
+      <div id="profileMenu" class="profile">
+        <img id="profileAvatar" src="" alt="avatar" />
+        <div id="profileName">You</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <aside class="leftcol">
+      <div class="profile-card">
+        <img id="leftAvatar" src="" alt="avatar" />
+        <h3 id="leftName">Your Name</h3>
+        <p id="leftBio">Your short bio</p>
+        <button id="editProfileBtn">Edit profile</button>
+      </div>
+
+      <div class="monetize-card">
+        <h4>Make money (mock)</h4>
+        <button id="tipsBtn">Add Tip Button</button>
+        <button id="shopBtn">Open Shop (mock)</button>
+        <button id="subscribeBtn">Enable Subscribe</button>
+        <small class="note">Real payments require parental help.</small>
+      </div>
+
+      <div class="trending">
+        <h4>Trending tags</h4>
+        <div id="tagsList"></div>
+      </div>
+    </aside>
+
+    <section class="feed" id="feed">
+      <!-- posts will be rendered here -->
+    </section>
+
+    <aside class="rightcol">
+      <div class="suggestions">
+        <h4>Suggested creators</h4>
+        <div id="suggestList"></div>
+      </div>
+
+      <div class="analytics">
+        <h4>Stats</h4>
+        <div id="statsArea"></div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- New post modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close" id="closeModal">&times;</button>
+      <h3>New post</h3>
+      <textarea id="postText" placeholder="What's up? (use #tags)"></textarea>
+      <input type="file" id="postImage" accept="image/*" />
+      <div class="modal-actions">
+        <button id="publishBtn">Publish</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit profile modal -->
+  <div id="profileModal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close" id="closeProfileModal">&times;</button>
+      <h3>Edit profile</h3>
+      <input id="profileNameInput" placeholder="Display name" />
+      <textarea id="profileBioInput" placeholder="Short bio"></textarea>
+      <input type="file" id="profileAvatarInput" accept="image/*" />
+      <div class="modal-actions">
+        <button id="saveProfileBtn">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Templates are created in JS for clarity -->
+  <script src="app.js"></script>
+</body>
+</html>
